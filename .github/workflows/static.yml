@@ -30,9 +30,9 @@ jobs:
       - name: Build static export
         run: |
           rm -rf .next out
-          mv src/app/api src/app/api-server-only
+          mv src/app/api api-server-only
           DATABASE_URL=postgres://localhost:5432/pages-build npm run build
-          mv src/app/api-server-only src/app/api
+          mv api-server-only src/app/api
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
